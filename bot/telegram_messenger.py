@@ -35,7 +35,7 @@ class TelegramMessenger(Messenger):
         timeout: int,
         allowed_updates: list[str],
     ) -> list[dict[str, Any]]:
-       
+
         updates = cast(
             list[dict[str, Any]],
             self._request_telegram_bot_api(
@@ -50,8 +50,6 @@ class TelegramMessenger(Messenger):
     def send_message(self, *, chat_id: int, text: str) -> dict[str, Any]:
         result = cast(
             dict[str, Any],
-            self._request_telegram_bot_api(
-                "sendMessage", chat_id=chat_id, text=text
-            ),
+            self._request_telegram_bot_api("sendMessage", chat_id=chat_id, text=text),
         )
         return result

@@ -15,9 +15,7 @@ class TestMessageTextHandler(unittest.TestCase):
         self.assertTrue(self.handler.can_handle(update))
         status = self.handler.handle(update, self.messenger)
         self.assertIs(status, HandlerStatus.STOP)
-        self.messenger.send_message.assert_called_once_with(
-            chat_id=42, text="Привет!"
-        )
+        self.messenger.send_message.assert_called_once_with(chat_id=42, text="Привет!")
 
     def test_ignores_photo(self) -> None:
         self.assertFalse(self.handler.can_handle({"message": {"photo": ["id"]}}))

@@ -1,5 +1,3 @@
-"""Long polling, including update offsets and retry on transient failures."""
-
 import logging
 import time
 

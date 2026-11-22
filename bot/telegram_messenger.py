@@ -1,3 +1,4 @@
+
 import json
 import urllib.parse
 import urllib.request
@@ -34,13 +35,13 @@ class TelegramMessenger(Messenger):
         timeout: int,
         allowed_updates: list[str],
     ) -> list[dict[str, Any]]:
-
         updates = cast(
             list[dict[str, Any]],
             self._request_telegram_bot_api(
                 "getUpdates",
                 offset=offset,
                 timeout=timeout,
+                limit=100,
                 allowed_updates=json.dumps(allowed_updates),
             ),
         )

@@ -5,7 +5,6 @@ from typing import Any, cast
 
 from bot.messenger import Messenger
 
-
 REQUEST_TIMEOUT = 40
 
 

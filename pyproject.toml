@@ -1,0 +1,17 @@
+[project]
+name = "telegram-echo-bot"
+version = "0.1.0"
+description = "Telegram text-only echo bot using urllib and DIP architecture"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "ARG"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["bot"]

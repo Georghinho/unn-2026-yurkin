@@ -1,0 +1,8 @@
+"""Explicit handler registration: only text echoes, unlike the reference bot."""
+
+from bot.handlers.handler import Handler
+from bot.handlers.message_text import MessageTextHandler
+
+
+def get_handlers() -> list[Handler]:
+    return [MessageTextHandler()]
